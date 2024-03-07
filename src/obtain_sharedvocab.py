@@ -20,7 +20,7 @@ def count_doc(file_pathes) -> List[str]:
                 words = line.strip().split()
                 for word in words:
                     word2freq[word] += 1
-        word2freq_path = f"word2freq_{path_id}.pkl"
+        word2freq_path = f"/results/word2freq_{path_id}.pkl"
         pickle.dump(word2freq, open(word2freq_path, "wb"))
         word2freq_pathes.append(word2freq_path)
         logging.info(f"[count_doc] saved to {word2freq_path}")
@@ -40,9 +40,9 @@ def save_target_list(target_list: List[str], model_name=None) -> str:
     id2word: Dict[int, str] = {word_id: target_list[word_id] for word_id in range(len(target_list))}
     if model_name is None:
         model_name = "id2word"
-    id2word_path = f"{model_name}.pkl"
+    id2word_path = f"/results/{model_name}.pkl"
     pickle.dump(id2word, open(id2word_path, "wb"))
-    with open(f"{model_name}.txt", "w") as fp:
+    with open(f"/results/{model_name}.txt", "w") as fp:
         for word_id, word in id2word.items():
             fp.write(f"{word_id}\t{word}\n")
 
