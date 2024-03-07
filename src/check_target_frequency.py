@@ -27,7 +27,7 @@ def main(file_pathes: List[str], target_words: List[str]) -> None:
             logging.info(f"[main]  - {target_word}\t{word2freq[target_word]}")
             target2freqs[target_word].append(str(word2freq[target_word]))
 
-    with open("check_target_frequency.tsv", "w") as fp:
+    with open("/results/check_target_frequency.tsv", "w") as fp:
         fp.write("target\tfrequency\n")
         for target_word in target_words:
             frequency_tab_separated = "\t".join(target2freqs[target_word])
