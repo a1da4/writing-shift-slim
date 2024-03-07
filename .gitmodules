@@ -1,0 +1,3 @@
+[submodule "src/sppmisvd"]
+	path = src/sppmisvd
+	url = https://github.com/a1da4/sppmi-svd.git
