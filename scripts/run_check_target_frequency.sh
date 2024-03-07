@@ -13,14 +13,14 @@ for ((i = 1; i <= $# - 1; i++)); do
     document_filename=$(basename "$document")
     echo "processing...: $document_filename"
 
-    docker run --name writing_shift_py \
+    docker run --name ws-slim_container \
         -w /app -v "${document_abspath}":/data/"${document_filename}" \
         -v "${target_word_list_abspath}":/data/"${target_word_list_filename}" \
         ws-slim/v0 \
         python check_target_frequency.py \
             --file_pathes /data/$document_filename \
-            --target_words /data/$target_word_list_file
-    docker remove writing_shift_py
+            --target_words /data/$target_word_list_filename
+    docker remove ws-slim_container
 
 done
 
