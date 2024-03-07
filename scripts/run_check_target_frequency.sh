@@ -50,7 +50,7 @@ docker run --name ws-slim_container \
     -w /app ${document_commands} \
     -v "${target_word_list_abspath}":/data/"${target_word_list_filename}" \
     -v ./results:/results \
-    ws-slim/v1 \
+    ws-slim \
     python check_target_frequency.py \
         --file_pathes ${document_filepathes} \
         --target_words /data/${target_word_list_filename}
