@@ -12,6 +12,10 @@ Check target word frequencies
 cd scripts/
 
 bash run_check_target_frequency.sh <doc1> <doc2> ... <docN> <target_word_list>
+```
 
+Obtain shared vocabulary across corpora
+```
 bash run_preprocess.sh <doc1> <doc2> ... <docN> <target_word_list> <threshold>
 ```
+
