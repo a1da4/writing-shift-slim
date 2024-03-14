@@ -16,7 +16,7 @@ def add_targetwords_into_vocab(id2word: Dict[int, str], word2id: Dict[str, int],
             curr_id += 1
             logging.info(f"[add_targetwords_into_vocab] add {target_word}")
 
-    pickle.dump(id2word, open("id2word.pkl", "wb"))
+    pickle.dump(id2word, open("/results/id2word.pkl", "wb"))
 
 
 def cli_main():
