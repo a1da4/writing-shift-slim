@@ -32,11 +32,8 @@ docker run --name ws-slim_container_prep \
         --file_pathes ${document_filepathes} \
         --threshold ${!#} 
 
-#docker cp ws-slim_container_prep:/results/id2word.pkl ./results/
-
 docker rm ws-slim_container_prep
 
-<<com
 docker run --name ws-slim_container_prep \
     -w /app \
     -v "${target_word_list_abspath}":/data/"${target_word_list_filename}" \
@@ -48,4 +45,3 @@ docker run --name ws-slim_container_prep \
 
 docker remove ws-slim_container_prep
 
-com
