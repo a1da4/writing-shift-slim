@@ -35,7 +35,7 @@ def calculate_neighbors(id2word: Dict[int, str],
     target_ids = list(id2target.keys())
     targetid2neighbors = {target_id: [] for target_id in target_ids}
 
-    with open("result_targetword_neighbors.tsv", "w") as fp:
+    with open("/results/result_targetword_neighbors.tsv", "w") as fp:
         fp.write("target_word\tneighbors(distance)\n")
 
         for curr_time in range(T):
