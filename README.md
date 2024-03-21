@@ -27,3 +27,10 @@ Results are stored in `./results/models/`
 ```
 bash run_train.sh <doc1> <doc2> ... <docN> <window_size> <dimension>
 ```
+
+## Analyze
+Calculate neighbors of target word vectors  
+
+```
+bash run_understand_neighbors.sh <window_size> <dimension> <target_word_list> <topk>
+```
