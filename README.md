@@ -23,10 +23,15 @@ bash run_preprocess.sh <doc1> <doc2> ... <docN> <target_word_list> <threshold>
 Compute Co-occur/PPMI/WV matrices for each doc
 Also compute joint WV matrix
 
-Results are stored in `./results/models/`
 ```
 bash run_train.sh <doc1> <doc2> ... <docN> <window_size> <dimension>
 ```
+
+Results are stored in `./results/models/`
+ - `./results/models/C_<docId>_w-<window>`: co-occur matrix
+ - `./results/models/PPMI_<docId>_w-<window>_s-1`: ppmi matrix
+ - `./results/models/WV_<docId>_d-<dimension>_w-<window_size>_s-1.npy`: word vectors (each doc) 
+ - `./results/models/WV_joint_d-<dimension>_w-<window_size>_s-1.npy`: joint word vector across docs
 
 ## Analyze
 Calculate neighbors of target word vectors  
