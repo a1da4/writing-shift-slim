@@ -51,7 +51,7 @@ docker run --name ws-slim_container_train \
         --mat_pathes ${mat_pathes} \
         --dim ${dimension}
 
-docker cp ws-slim_container_train:/app/WV_d-${dimension}.npy ./results/models/WV_joint_d-${diimension}_w-${window}_s-1.npy
+docker cp ws-slim_container_train:/app/WV_d-${dimension}.npy ./results/models/WV_joint_d-${dimension}_w-${window}_s-1.npy
 
 docker remove ws-slim_container_train
 
