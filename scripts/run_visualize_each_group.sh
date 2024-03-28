@@ -26,6 +26,20 @@ for ((i = 3; i <= $#; i++)); do
 
 done
 
+docker run --name ws-slim_container_pre_visualize \
+    -w /app \
+    -v ./results:/results \
+    ${wordgroup_commands} \
+    ws-slim \
+    python3 calculate_distance_targets.py \
+        --pickle_id2word /results/id2word.pkl \
+        --joint_vector /results/models/${joint_vector_filename} \
+        --target_word_pathes ${wordgroup_filepathes} \
+        --output_names ${output_names}
+
+docker remove ws-slim_container_pre_visualize
+
+
 docker run --name ws-slim_container_visualize \
     -w /app \
     -v ./results:/results \
