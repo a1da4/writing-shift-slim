@@ -3,6 +3,10 @@ light-weight implementation of 'writing-shift' https://github.com/a1da4/writing-
 
 ## Setup
 ```
+git clone https://github.com/a1da4/writing-shift-slim.git
+
+git submodule update --init --recursive
+
 docker build -t ws-slim .
 ```
 
