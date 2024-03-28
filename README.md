@@ -39,3 +39,14 @@ Calculate neighbors of target word vectors
 ```
 bash run_understand_neighbors.sh <joint_vector> <target_word_list> <topk>
 ```
+
+## Visualize
+(Optional) Visualize each group of target words  
+group\_1 + group\_2 + ... + group\_L = all target words
+
+```
+bash run_visualize_each_group.sh <joint_vector> <topk> <word_list_1> <word_list_2> ... <word_list_L>
+```
+
+Results are stored in `./results/figures/`
+
