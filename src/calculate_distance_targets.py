@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import pickle
 
 import numpy as np
@@ -14,6 +15,8 @@ def calculate_distance_targets(id2word: Dict[int, str],
                                target_words: List[str],
                                WV: List[List[float]],
                                output: str = "test") -> None:
+
+    os.makedirs("/results/distances", exist_ok=True)
     V = len(id2word)
     T = len(WV) // V
     WV_eachtimes = np.split(WV, T)
@@ -39,7 +42,7 @@ def calculate_distance_targets(id2word: Dict[int, str],
             result_currtime = ",".join(results_currtime)
             target2results[target_word].append(result_currtime)
 
-    with open(f"{output}.tsv", "w") as fp:
+    with open(f"/results/distances/{output}.tsv", "w") as fp:
         timeslices = "\t".join([str(t) for t in range(T)])
         fp.write(f"target_word\t{timeslices}\n")
         for target_word in target_words:
