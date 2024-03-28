@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import pickle
 
 import matplotlib.pyplot as plt
@@ -149,7 +150,7 @@ def plot_2d(target_words: List[str],
         vec = vecid2vec_2d[vecid]
         plt.text(vec[0], vec[1], word)
 
-    plt.savefig(f"{output}.png")
+    plt.savefig(f"/results/figures/{output}.png")
     plt.clf()
 
 
@@ -159,6 +160,8 @@ def visualize(id2word: Dict[int, str],
               WV: List[List[float]],
               num_neighbors: int,
               output: str = "test") -> None:
+
+    os.makedirs("/results/figures", exist_ok=True)
 
     V = len(id2word)
     T = len(WV) // V
@@ -219,6 +222,7 @@ def cli_main():
     parser.add_argument("--output_names", nargs="*", help="output names")
 
     args = parser.parse_args()
+    logging.debug(f"[main] args: {args}")
 
     logging.debug("[main] load dict, word vectors")
     id2word, word2id = load_pickle(args.pickle_id2word)
